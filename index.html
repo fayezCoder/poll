@@ -9,30 +9,62 @@
 <body>
     <div class="form-container">
         <h1>استبانات</h1>
-        <form id="surveyForm" method="POST" action="https://script.google.com/macros/s/AKfycbxlK-_4mI58RdjBUX8fRUr6GDExECNprLQeWcSgqDLaWp-pFSbwNVi3W4pDWaBDW-RalA/exec">
+        <form id="surveyForm">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
-        
+
             <div class="form-group">
                 <label for="class">Class:</label>
                 <input type="text" id="class" name="class" placeholder="Enter your Class" required>
             </div>
-        
+
             <div class="question">
                 <label>1. ماهي لغتك الأم؟</label>
-                <div>
-                    <input type="radio" name="q1" value="العربية" required> العربية
-                    <input type="radio" name="q1" value="الإنجليزية" required> الإنجليزية
+                <div class="question-options">
+                    <div class="option"><input type="radio" name="q1" value="العربية" required> العربية</div>
+                    <div class="option"><input type="radio" name="q1" value="الإنجليزية" required> الإنجليزية</div>
                 </div>
             </div>
-        
-            <!-- Additional questions here -->
-        
+
+            <div class="question">
+                <label>2. هل لديك معرفة سابقة باللغة الصينية؟</label>
+                <div class="question-options">
+                    <div class="option"><input type="radio" name="q2" value="نعم" required> نعم</div>
+                    <div class="option"><input type="radio" name="q2" value="لا" required> لا</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>3. ما هو سبب اهتمامك بتعلم اللغة الصينية؟</label>
+                <div class="question-options">
+                    <div class="option"><input type="radio" name="q3" value="العمل" required> العمل</div>
+                    <div class="option"><input type="radio" name="q3" value="الدراسة" required> الدراسة</div>
+                    <div class="option"><input type="radio" name="q3" value="السفر" required> السفر</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>4. ما هي طريقة التعلم المفضلة لديك؟</label>
+                <div class="question-options">
+                    <div class="option"><input type="radio" name="q4" value="الدروس التقليدية" required> الدروس التقليدية</div>
+                    <div class="option"><input type="radio" name="q4" value="التعلم الذاتي" required> التعلم الذاتي</div>
+                    <div class="option"><input type="radio" name="q4" value="الدورات عبر الإنترنت" required> الدورات عبر الإنترنت</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>5. كم من الوقت تخطط لتخصيصه لتعلم اللغة الصينية أسبوعياً؟</label>
+                <div class="question-options">
+                    <div class="option"><input type="radio" name="q5" value="أقل من ساعة" required> أقل من ساعة</div>
+                    <div class="option"><input type="radio" name="q5" value="1-3 ساعات" required> 1-3 ساعات</div>
+                    <div class="option"><input type="radio" name="q5" value="أكثر من 5 ساعات" required> أكثر من 5 ساعات</div>
+                </div>
+            </div>
+
             <button type="submit">Submit</button>
         </form>
-        
     </div>
     <script src="script.js"></script>
 </body>
