@@ -15,7 +15,7 @@ document.getElementById("surveyForm").addEventListener("submit", async function 
 
     try {
         const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbwVMhST9AbGV5wVmV5i0rtddcm7vle1JXd8OoPE9TGNIC_Ix_8ZFY08pM2U19AGVnjqQg/exec",
+            "https://script.google.com/macros/s/1bBoRgkX2jzCDFgeJpQRuthbYf3GHYusMh6Jw4UMdnzY5UszXJYONk7RK/exec",
             {
                 method: "POST",
                 body: JSON.stringify(data),
