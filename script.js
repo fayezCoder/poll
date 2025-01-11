@@ -12,7 +12,7 @@ document.getElementById("surveyForm").addEventListener("submit", async function 
 
   try {
     // Make a POST request to your Apps Script web app
-    const response = await fetch("YOUR_SCRIPT_URL", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbxTGXeN5lVR86BTa_dvl_NpGB_GUSMCpduDmrDpwHoPUt95-P33CSwvXzywdTNT-iP5GQ/exec", {
       method: "POST", // Ensures POST is used
       headers: {
         "Content-Type": "application/x-www-form-urlencoded", // Set the content type
