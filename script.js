@@ -1,36 +1,36 @@
 document.getElementById("surveyForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+  e.preventDefault(); // Prevent default form submission
 
-    const formData = new FormData(e.target);
+  // Collect form data
+  const formData = new FormData(e.target);
 
-    const data = {
-        name: formData.get("name"),
-        class: formData.get("class"),
-        q1: formData.get("q1"),
-        q2: formData.get("q2"),
-        q3: formData.get("q3"),
-        q4: formData.get("q4"),
-        q5: formData.get("q5"),
-    };
+  // Convert form data to URL-encoded format
+  const data = new URLSearchParams();
+  formData.forEach((value, key) => {
+    data.append(key, value);
+  });
 
-    try {
-        const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbxTGXeN5lVR86BTa_dvl_NpGB_GUSMCpduDmrDpwHoPUt95-P33CSwvXzywdTNT-iP5GQ/exec",
-            {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { "Content-Type": "application/json" },
-            }
-        );
+  try {
+    // Make a POST request to your Apps Script web app
+    const response = await fetch("YOUR_SCRIPT_URL", {
+      method: "POST", // Ensures POST is used
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded", // Set the content type
+      },
+      body: data, // Send the form data
+    });
 
-        const result = await response.json();
-        if (result.success) {
-            alert("Form submitted successfully!");
-        } else {
-            alert("Failed to submit the form.");
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Error submitting the form.");
+    // Parse the JSON response
+    const result = await response.json();
+    console.log(result);
+
+    if (result.status === "success") {
+      alert("Form submitted successfully!");
+    } else {
+      alert("Error: " + result.message);
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Failed to submit the form. Please try again.");
+  }
 });
